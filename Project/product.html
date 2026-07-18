@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vegetable Shop</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#ad8787;
+      padding:20px;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:20px;
+      color:green;
+    }
+
+    .search-box{
+      width:100%;
+      max-width:400px;
+      margin:auto;
+      margin-bottom:30px;
+    }
+
+    .search-box input{
+      width:100%;
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:16px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      padding:15px;
+      border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      text-align:center;
+    }
+
+    .card img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:10px;
+    }
+
+    .card h3{
+      margin:15px 0 10px;
+    }
+
+    .price{
+      color:rgb(158, 182, 158);
+      font-size:18px;
+      margin-bottom:10px;
+    }
+
+    button{
+      background:#212422;
+      color:white;
+      border:none;
+      padding:10px 15px;
+      border-radius:6px;
+      cursor:pointer;
+      font-size:15px;
+    }
+
+    button:hover{
+      background:#218838;
+    }
+
+    #cart-count{
+      position:fixed;
+      top:20px;
+      right:20px;
+      background:red;
+      color:white;
+      padding:10px 15px;
+      border-radius:50px;
+      font-weight:bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Vegetable Shop</h1>
+
+  <div id="cart-count">
+    Cart: <span id="count">0</span>
+  </div>
+
+ 
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search vegetables...">
+  </div>
+
+  <!-- Products -->
+  <div class="products">
+
+    <!-- 15 Vegetables -->
+
+    <div class="card">
+      <img src="/Tomoto.jpeg">
+      <h3>Tomato</h3>
+      <p class="price">₹40/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/potato.jpeg">
+      <h3>Potato</h3>
+      <p class="price">₹30/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Big onion.jpeg">
+      <h3>Onion</h3>
+      <p class="price">₹35/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Carrot.jpeg">
+      <h3>Carrot</h3>
+      <p class="price">₹60/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Eggplant.jpeg">
+      <h3>Eggplant</h3>
+      <p class="price">₹70/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Radish.jpeg">
+      <h3>Radish</h3>
+      <p class="price">₹50/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Cabbale.jpeg">
+      <h3>Cabbale</h3>
+      <p class="price">₹25/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Beetroot.jpeg">
+      <h3>Beetroot</h3>
+      <p class="price">₹40/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Red Chilli.jpeg">
+      <h3>Red Chilli</h3>
+      <p class="price">₹20/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Okra.jpeg">
+      <h3>Okra</h3>
+      <p class="price">₹15/bunch</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Cantaloupe.jpeg">
+      <h3>Cantaloupe</h3>
+      <p class="price">₹30/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Small onion.jpeg">
+      <h3>Small Onion</h3>
+      <p class="price">₹55/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Garlic.jpeg">
+      <h3>Garlic</h3>
+      <p class="price">₹40/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Ginger.jpeg">
+      <h3>Ginger</h3>
+      <p class="price">₹35/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="/Lemon.jpeg">
+      <h3>Lemon</h3>
+      <p class="price">₹80/kg</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+  </div>
+
+  <script>
+    let cart = 0;
+
+    function addToCart() {
+      cart++;
+      document.getElementById("count").innerText = cart;
+      alert("Vegetable added to cart");
+    }
+
+    // Search
+    const search = document.getElementById("search");
+
+    search.addEventListener("keyup", function () {
+
+      let filter = search.value.toLowerCase();
+
+      let cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+
+        let title = card.querySelector("h3").innerText.toLowerCase();
+
+        if(title.includes(filter)){
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>
